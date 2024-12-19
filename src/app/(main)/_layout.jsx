@@ -5,7 +5,7 @@ export default function Layout() {
     return (
         <Stack>
             <Stack.Screen name="index"  
-             options={{title: "Welcome Main Page"}}
+             options={{title: "Main Page"}}
             />
         </Stack>
     )

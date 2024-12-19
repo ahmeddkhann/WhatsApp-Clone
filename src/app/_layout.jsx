@@ -12,10 +12,11 @@ export default function Layout() {
   },[])
 
   return (
-    <Stack screenOptions={{headerShown: false}}>
+  <>
+      <Stack  screenOptions={{headerShown: false}}/>
       {
         isLogin? <Redirect href={"/(main)"}/> : <Redirect href={"/(auth)"}/>
       }
-    </Stack>
+    </>
   );
 }

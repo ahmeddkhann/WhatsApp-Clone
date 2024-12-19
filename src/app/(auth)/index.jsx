@@ -4,7 +4,7 @@ import React from 'react'
 const HomePage = () => {
   return (
     <View>
-      <Text>Welcome to Whatsap Auth Section</Text>
+      <Text>Welcome to Whatsap Auth Section!!</Text>
     </View>
   )
 }
