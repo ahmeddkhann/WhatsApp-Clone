@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Home = () => {
+const HomePage = () => {
   return (
     <View>
-      <Text>Home</Text>
+      <Text>Welcome to Whatsap Auth Section</Text>
     </View>
   )
 }
 
-export default Home
+export default HomePage
 
 const styles = StyleSheet.create({})
