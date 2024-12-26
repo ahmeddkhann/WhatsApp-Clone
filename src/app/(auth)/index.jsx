@@ -1,12 +1,18 @@
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native'
 import React from 'react'
-
+import images from '@/src/constants/ImagePath'
 
 const HomePage = () => {
   return (
   <SafeAreaView style={styles.container}>
     <View ></View>
-    <View style={styles.body}></View>
+    <View style={styles.body}>
+      <Image  
+       source={images.logo}
+       style={styles.logo}
+      />
+      <Text style={styles.whatsappText}> Whatsapp</Text>
+    </View>
     <View style={styles.footer}>
       <Text style={styles.fromText}>From</Text>
       <Text style={styles.facebookText}>Facebook</Text>
@@ -26,18 +32,27 @@ const styles = StyleSheet.create({
   },
 
   body: {
-    height: 50,
-    width: 50,
-    backgroundColor: "blue"
+   alignItems: "center",
+   gap: 8
   },
   footer: {
    alignItems: "center"
 },
   fromText: {
-    fontSize: 12
+    fontSize: 15
   },
   facebookText: {
-    fontSize: 15,
+    fontSize: 20,
+    fontWeight: "bold"
+  },
+  logo: {
+    height: 70,
+    width: 70,
+    borderRadius: 10
+  },
+  whatsappText: {
+    fontSize: 30,
     fontWeight: "bold"
   }
+
 })
