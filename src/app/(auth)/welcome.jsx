@@ -19,6 +19,11 @@ const Welcome = () => {
       </TouchableOpacity>
     </View>
     <View style={styles.footer}></View>
+
+    <View style={styles.footer}>
+       <Text style={styles.fromText}>From</Text>
+        <Text style={styles.facebookText}>FACEBOOK</Text>
+    </View>
    </SafeAreaView>
   )
 }
@@ -32,44 +37,56 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   header: {
-    height: "75%",
     width: "100%",
     alignItems: "center",
   },
   footer: {
-    height: "25%",
-    width: "100%"
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20
   },
+  
   termsAgree: {
     height: 220,
     width: 220,
-    marginTop: 30
+    marginTop: 30,
   },
   betweenText: {
-    color: "blue"
+    color: "blue",
   },
   agreeButton: {
-   backgroundColor: "#1E9B50",
+    backgroundColor: "#1E9B50",
     borderRadius: 10,
     padding: 10,
     width: "80%",
-    marginTop: 20
+    marginTop: 20,
   },
   agreeButtonText: {
     color: "white",
     fontSize: 15,
-    textAlign: "center"
+    textAlign: "center",
   },
   headerText: {
     fontSize: 24,
     color: "black",
     fontWeight: "bold",
-    marginTop: 54
+    marginTop: 54,
   },
   paragraphText: {
     fontSize: 15,
     color: "black",
     marginTop: 30,
-    width: "80%"
-  }
-})
+    width: "80%",
+    textAlign: "center",
+  },
+  fromText: {
+    fontSize: 12,
+    color: "gray",
+  },
+  facebookText: {
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "black",
+  },
+});
