@@ -34,7 +34,7 @@ const HomePage = () => {
       </> : 
       <>
       <Text style={styles.fromText}>From</Text>
-      <Text style={styles.facebookText}>Facebook</Text>
+      <Text style={styles.facebookText}>FACEBOOK</Text>
       </>
       }
     </View>
