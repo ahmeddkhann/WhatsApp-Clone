@@ -1,8 +1,13 @@
 import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import images from '@/src/constants/ImagePath'
+import { router } from 'expo-router'
 
 const Welcome = () => {
+
+  const pressOnAgreeAndContinue = () => {
+    router.push("/(auth)/number")
+  }
   return (
    <SafeAreaView style={styles.container}>
     <View style={styles.header}>
@@ -14,7 +19,7 @@ const Welcome = () => {
       <Text style={styles.paragraphText}> Read our <Text style={styles.betweenText}> Privacy Policy</Text> Tap "Agree and Continue" to accept the 
        <Text style={styles.betweenText}> Terms of Services</Text>
       </Text>
-      <TouchableOpacity style={styles.agreeButton}>
+      <TouchableOpacity style={styles.agreeButton} onPress={pressOnAgreeAndContinue}>
         <Text style={styles.agreeButtonText}> Agree and Continue</Text>
       </TouchableOpacity>
     </View>
