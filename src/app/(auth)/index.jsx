@@ -1,8 +1,21 @@
-import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, SafeAreaView, Image, ActivityIndicator } from 'react-native'
+import React, {useState, useEffect} from 'react'
 import images from '@/src/constants/ImagePath'
+import { router } from 'expo-router'
 
 const HomePage = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const navigateToWelcome = () => {
+    router.push("/(auth)/welcome")
+  }
+
+  useEffect(()=> {
+    setTimeout(() => {
+      setIsLoading(true),
+      setTimeout(navigateToWelcome, 5000)
+    }, 4000)
+  }, [])
+
   return (
   <SafeAreaView style={styles.container}>
     <View ></View>
@@ -14,8 +27,16 @@ const HomePage = () => {
       <Text style={styles.whatsappText}> Whatsapp</Text>
     </View>
     <View style={styles.footer}>
+      {isLoading? 
+      <>
+       <ActivityIndicator size={50} color={"#0CCC83"}/>
+       <Text style={styles.loadingText}>Loading...</Text>
+      </> : 
+      <>
       <Text style={styles.fromText}>From</Text>
       <Text style={styles.facebookText}>Facebook</Text>
+      </>
+      }
     </View>
   </SafeAreaView>
   )
@@ -36,7 +57,11 @@ const styles = StyleSheet.create({
    gap: 8
   },
   footer: {
-   alignItems: "center"
+   alignItems: "center",
+   height: 60,
+   justifyContent: "flex-end",
+   paddingBottom: 8,
+   gap: 6
 },
   fromText: {
     fontSize: 15
@@ -53,6 +78,10 @@ const styles = StyleSheet.create({
   whatsappText: {
     fontSize: 30,
     fontWeight: "bold"
+  },
+  loadingText: {
+    fontSize: 20,
+    fontWeight: "bold",
   }
 
 })
