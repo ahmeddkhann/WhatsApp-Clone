@@ -13,6 +13,9 @@ export default function Layout() {
             <Stack.Screen name="number" 
             options={{headerShown: false}}
             />
+            <Stack.Screen name="otpPage"  
+            options={{headerShown: "false"}}
+            />
         </Stack>
     )
 }

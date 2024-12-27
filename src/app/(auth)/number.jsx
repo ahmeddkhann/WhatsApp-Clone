@@ -1,8 +1,19 @@
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, TextInput } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import {CountryPicker} from "react-native-country-codes-picker"
+import { router } from 'expo-router';
 
 const Number = () => {
+
+  const [countryName, setCountryName] = useState("Pakistan");
+  const [countryCode, setCountryCode] = useState("+92");
+  const [countryFlag, setCountryFlag] = useState ()
+  const [show, setShow] = useState(false)
+
+  const turnToOTPPage = () => {
+    router.push("/(auth)/otpPage")
+  }
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header} >
@@ -20,10 +31,12 @@ const Number = () => {
         <View style={styles.selectCountryView}>
           <View/>
           <View>
-            <Text style={styles.countryText}> Pakistan </Text>
+            <Text style={styles.countryText}> {countryName} </Text>
             </View>
          <View>
-         <TouchableOpacity style={styles.dropdownIcon}>
+         <TouchableOpacity style={styles.dropdownIcon} 
+         onPress={() => setShow (true)}
+         >
           <Icon name="arrow-drop-down" size={30} color="#000" style={styles.icon} />
           </TouchableOpacity>
          </View>
@@ -32,7 +45,10 @@ const Number = () => {
         <View style={styles.lineOne} />
         <View style={styles.numberFields}>
           <View>
-            <Text style={styles.codeText}>+92</Text>
+            <Text style={styles.codeText}>
+              {countryFlag} {" "}
+              {countryCode}
+            </Text>
             <View style={styles.lineTwo} />
           </View>
 
@@ -53,9 +69,24 @@ const Number = () => {
        </View>
       </View>
        <View style={styles.footer}>
-        <TouchableOpacity style={styles.nextButton}>
+        <TouchableOpacity style={styles.nextButton} onPress={turnToOTPPage}>
           <Text style={styles.nextButtonText}>Next</Text>
         </TouchableOpacity>
+      </View>
+      <View>
+      {show && 
+      <CountryPicker 
+      show={show}
+      onRequestClose={setShow(false)}
+
+      pickerButtonOnPress={(item) => {
+        setCountryCode(item.code);
+        setCountryName(item.name);
+        setCountryFlag(item.flag)
+      }}
+      />
+      }
+
       </View>
     </SafeAreaView>
   )
