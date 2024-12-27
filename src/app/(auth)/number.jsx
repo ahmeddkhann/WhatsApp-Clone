@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, TextInput } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -16,19 +16,45 @@ const Number = () => {
        </View>
 
        <View>
-        <View>
+        
+        <View style={styles.selectCountryView}>
           <View/>
-          <Text> Pakistan </Text>
-          <TouchableOpacity>
-          <Icon name="arrow-drop-down" size={24} color="#000" style={styles.icon} />
+          <View>
+            <Text style={styles.countryText}> Pakistan </Text>
+            </View>
+         <View>
+         <TouchableOpacity style={styles.dropdownIcon}>
+          <Icon name="arrow-drop-down" size={30} color="#000" style={styles.icon} />
           </TouchableOpacity>
+         </View>
         </View>
+
         <View style={styles.lineOne} />
+        <View style={styles.numberFields}>
+          <View>
+            <Text style={styles.codeText}>+92</Text>
+            <View style={styles.lineTwo} />
+          </View>
+
+          <View>
+          <TextInput
+            style={styles.phoneInput}
+            keyboardType="phone-pad"
+            placeholder="Enter phone number"
+            placeholderTextColor="#aaa"
+            
+          />
+          <View style={styles.lineThree} />
+          </View>
+          <View>
+            
+          </View>
+        </View>
        </View>
       </View>
-      <View>
-        <TouchableOpacity>
-          <Text> Next</Text>
+       <View style={styles.footer}>
+        <TouchableOpacity style={styles.nextButton}>
+          <Text style={styles.nextButtonText}>Next</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -61,8 +87,69 @@ const styles = StyleSheet.create({
     color: "blue"
   },
   lineOne: {
-    width: "100%",
+    width: "85%",
     height: 2,
-    backgroundColor: "#00A884"
-  }
+    backgroundColor: "#00A884",
+    marginLeft: "8%"
+  },
+  selectCountryView: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 30,
+    paddingVertical: 6,
+    paddingHorizontal: 6,
+    marginLeft: "13%",
+    width: "85%"
+  },
+  countryText: {
+    fontSize: 14,
+    fontWeight: "bold"
+  },
+  dropdownIcon: {
+    paddingRight: 8
+  },
+  lineTwo: {
+    width: "85%",
+    height: 2,
+    backgroundColor: "#00A884",
+    marginLeft: "8%",
+    marginTop: "15%"
+  },
+  codeText: {
+    marginLeft: "15%",
+    marginTop: "20%"
+  },
+  lineThree: {
+    width: "145%",
+    height: 2,
+    backgroundColor: "#00A884",
+    marginLeft: "8%"
+  },
+  numberFields: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginLeft: "6%"
+  },
+  phoneInput: {
+    marginLeft: "6%",
+    marginTop: "3%"
+  },
+  footer: {
+    marginTop: 'auto',
+    padding: 20,
+  },
+  nextButton: {
+    backgroundColor: '#00A884',
+    paddingVertical: 12,
+    paddingLeft: 20,
+    paddingRight: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  nextButtonText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
 })
