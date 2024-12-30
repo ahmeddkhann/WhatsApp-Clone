@@ -20,7 +20,7 @@ const OTPPage = () => {
     </View>
     <View >
         <Text style={styles.timerText}>
-        Resend Code in <Text>56</Text> s
+        Resend Code in <Text style={styles.timeText}>56</Text> s
         </Text>
     </View>
     </View>
@@ -74,6 +74,10 @@ const styles = StyleSheet.create({
         height: 65,
     },
     timerText:{
-        marginTop: 20
+        marginTop: 30,
+        textAlign: "center"
+    },
+    timeText: {
+        color: "#00A884"
     }
 })
