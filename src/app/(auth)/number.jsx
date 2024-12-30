@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, TextInput } from 'react-native'
 import React, {useState} from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import {CountryPicker} from "react-native-country-codes-picker"
+import {CountryPicker} from "react-native-country-codes-picker";
 import { router } from 'expo-router';
 
 const Number = () => {
 
   const [countryName, setCountryName] = useState("Pakistan");
   const [countryCode, setCountryCode] = useState("+92");
-  const [countryFlag, setCountryFlag] = useState ()
+  const [countryFlag, setCountryFlag] = useState ("🇵🇰")
   const [show, setShow] = useState(false)
 
   const turnToOTPPage = () => {
@@ -46,8 +46,8 @@ const Number = () => {
         <View style={styles.numberFields}>
           <View>
             <Text style={styles.codeText}>
-              {countryFlag} {" "}
-              {countryCode}
+            {countryCode} {" "}
+              {countryFlag}
             </Text>
             <View style={styles.lineTwo} />
           </View>
@@ -74,18 +74,26 @@ const Number = () => {
         </TouchableOpacity>
       </View>
       <View>
-      {show && 
-      <CountryPicker 
-      show={show}
-      onRequestClose={setShow(false)}
-
+     {
+      show && 
+      <CountryPicker  
+      show = {show}
       pickerButtonOnPress={(item) => {
-        setCountryCode(item.code);
-        setCountryName(item.name);
-        setCountryFlag(item.flag)
+        if (item && typeof item.dial_code === 'string') {
+          const countryName = item.name?.en || "Unknown"; // Use English name or fallback
+          const countryFlag = item.flag || "🏳️"; // Use the flag or fallback to a neutral flag
+          setCountryCode(item.dial_code);
+          setCountryName(countryName);
+          setCountryFlag(countryFlag);
+        } else {
+          console.error("Invalid country item:", item);
+        }
+        setShow(false);
       }}
+      
+
       />
-      }
+     }
 
       </View>
     </SafeAreaView>
