@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     marginTop: "20%"
   },
   lineThree: {
-    width: "145%",
+    width: "130%",
     height: 2,
     backgroundColor: "#00A884",
     marginLeft: "8%"
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   },
   phoneInput: {
     marginLeft: "6%",
-    marginTop: "3%"
+    marginTop: "9%"
   },
   footer: {
     marginTop: 'auto',
