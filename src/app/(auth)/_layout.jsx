@@ -14,7 +14,7 @@ export default function Layout() {
             options={{headerShown: false}}
             />
             <Stack.Screen name="otpPage"  
-            options={{headerShown: "false"}}
+            options={{title: "Enter OTP Code"}}
             />
         </Stack>
     )
