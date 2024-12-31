@@ -7,6 +7,9 @@ export default function Layout() {
             <Stack.Screen name="index"  
              options={{headerShown: false}}
             />
+            <Stack.Screen name="callPage"/>
+            <Stack.Screen name="chattingPage"/>
+            <Stack.Screen name="statusPage"/>
         </Stack>
     )
 }

@@ -8,8 +8,19 @@ import {
 } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import { router } from "expo-router";
 
 const HomePage = () => {
+
+  const turnToChattingPage = () => {
+    router.push("/(main)/chattingPage")
+  }
+  const turnToStatusPage = () => {
+    router.push("/(main)/statusPage")
+  }
+  const turnToCallPage = () => {
+    router.push("/(main)/callPage")
+  }
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.main}>
@@ -28,13 +39,13 @@ const HomePage = () => {
             color="white"
             style={styles.cameraIcon}
           />
-          <TouchableOpacity style={styles.tab}>
+          <TouchableOpacity style={styles.tab} onPress={turnToChattingPage}>
             <Text style={styles.tabText}>Chats</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.tab}>
+          <TouchableOpacity style={styles.tab} onPress={turnToStatusPage}>
             <Text style={styles.tabText}>Status</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.tab}>
+          <TouchableOpacity style={styles.tab} onPress={turnToCallPage}>
             <Text style={styles.tabText}>Calls</Text>
           </TouchableOpacity>
         </View>
@@ -47,7 +58,7 @@ const HomePage = () => {
         />
         </View>
         <Text style={styles.emptyText}>You haven’t chat yet</Text>
-        <TouchableOpacity style={styles.startChatButton}>
+        <TouchableOpacity style={styles.startChatButton} onPress={turnToChattingPage}>
           <Text style={styles.startChatText}>Start Chatting</Text>
         </TouchableOpacity>
       </View>
