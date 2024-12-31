@@ -1,4 +1,11 @@
 import { ahmed } from "../constants/ImagePath";
+import { yahya } from "../constants/ImagePath";
+import { habibullah } from "../constants/ImagePath";
+import { ahsan } from "../constants/ImagePath";
+import { azizullah } from "../constants/ImagePath";
+import { mohsin } from "../constants/ImagePath";
+import { munsif } from "../constants/ImagePath";
+import { mudassir } from "../constants/ImagePath";
 export const chatData = [
     {
       id: 1,
@@ -14,8 +21,8 @@ export const chatData = [
       id: 2,
       name: "Yahya",
       message: "Did you complete the task?",
-      profilePic: "https://i.imgur.com/JjC0nST.png",
-      time: "Yesterday",
+      profilePic: yahya,
+      time: "10:20 AM",
       statusIcon: "checkmark-done",
       statusColor: "gray",
       unreadMessages: 3,
@@ -24,8 +31,8 @@ export const chatData = [
       id: 3,
       name: "Habibullah",
       message: "Let me know when you arrive.",
-      profilePic: "https://i.imgur.com/lQqzOj8.png",
-      time: "Previous",
+      profilePic: habibullah,
+      time: "8:40 AM",
       statusIcon: "checkmark",
       statusColor: "gray",
       unreadMessages: 0,
@@ -34,7 +41,7 @@ export const chatData = [
       id: 4,
       name: "Ahsan Javed",
       message: "See you at 5 PM!",
-      profilePic: "https://i.imgur.com/2rSlEPQ.png",
+      profilePic: ahsan,
       time: "12:45 AM",
       statusIcon: "checkmark-done",
       statusColor: "blue",
@@ -44,7 +51,7 @@ export const chatData = [
       id: 5,
       name: "Mohsin Kamal",
       message: "Check your email for updates.",
-      profilePic: "https://i.imgur.com/P9GZ9XD.png",
+      profilePic: mohsin,
       time: "Yesterday",
       statusIcon: "checkmark-done",
       statusColor: "blue",
@@ -54,8 +61,8 @@ export const chatData = [
       id: 6,
       name: "Munsif",
       message: "Great meeting today!",
-      profilePic: "https://i.imgur.com/8VqQilU.png",
-      time: "Previous",
+      profilePic: munsif,
+      time: "Yesterday",
       statusIcon: "checkmark-done",
       statusColor: "blue",
       unreadMessages: 0,
@@ -64,8 +71,8 @@ export const chatData = [
       id: 7,
       name: "Mudassir",
       message: "Can we reschedule?",
-      profilePic: "https://i.imgur.com/ZQbGtKk.png",
-      time: "Yesterday",
+      profilePic: mudassir,
+      time: "28/11/24",
       statusIcon: "checkmark-done",
       statusColor: "gray",
       unreadMessages: 2,
@@ -74,8 +81,8 @@ export const chatData = [
       id: 8,
       name: "Azizullah",
       message: "Thanks for the help!",
-      profilePic: "https://i.imgur.com/6oO7N7D.png",
-      time: "12:30 AM",
+      profilePic: azizullah,
+      time: "25/11/24",
       statusIcon: "checkmark",
       statusColor: "gray",
       unreadMessages: 0,
@@ -85,7 +92,7 @@ export const chatData = [
       name: "Ghayur",
       message: "Can you call me later?",
       profilePic: "https://i.imgur.com/jPlcRZX.png",
-      time: "Yesterday",
+      time: "22/11/24",
       statusIcon: "checkmark-done",
       statusColor: "blue",
       unreadMessages: 0,
