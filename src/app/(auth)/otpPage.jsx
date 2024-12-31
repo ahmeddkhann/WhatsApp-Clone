@@ -1,9 +1,30 @@
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+
+import { Alert, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, {useState} from 'react'
 import OTPInput from "@codsod/react-native-otp-input";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { router } from 'expo-router';
 
 const OTPPage = () => {
     const [otp, setOTP] = useState("");
+
+    const verifyOTP = async () => {
+        if (otp.length < 4){
+            Alert.alert("Please enter all OTP digits");
+            return;
+        }
+        if (otp.length === 4){
+           try {
+            await AsyncStorage.setItem("accessToken", "abcdefghijklmnopqrstuvwxyz")
+            Alert.alert("OTP Verified Successfuly")
+            router.push("/(main)")
+
+           } catch (error) {
+              console.log("error while verifying OTP: ",error );
+              Alert.alert("OTP Vrification failed !!!")   
+           }
+        }
+    }
 
   return (
   <SafeAreaView style={styles.container}>
@@ -20,13 +41,13 @@ const OTPPage = () => {
     </View>
     <View >
         <Text style={styles.timerText}>
-        Resend Code in <Text style={styles.timeText}>56</Text> s
+        Resend Code in <Text style={styles.timeText}>48</Text> s
         </Text>
     </View>
     </View>
 
     <View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={verifyOTP}>
             <Text style={styles.buttonText}>Verify</Text>
         </TouchableOpacity>
     </View>

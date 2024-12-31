@@ -2,11 +2,22 @@ import { StyleSheet, Text, View, SafeAreaView, Image, ActivityIndicator } from '
 import React, {useState, useEffect} from 'react'
 import images from '@/src/constants/ImagePath'
 import { router } from 'expo-router'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigateToWelcome = () => {
-    router.push("/(auth)/welcome")
+    try {
+      const token = AsyncStorage.getItem("accessToken");
+      if (token){
+        router.push("/(main)")
+      }else {
+        router.push("/(auth)/welcome")
+
+      }
+    } catch (error) {
+      
+    }
   }
 
   useEffect(()=> {
