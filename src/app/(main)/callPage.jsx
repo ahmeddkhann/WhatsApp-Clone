@@ -5,8 +5,6 @@ import {
   Text,
   TouchableOpacity,
   View,
-  FlatList,
-  Image,
 } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
